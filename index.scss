@@ -2,6 +2,7 @@
 
 * {
   font-family: "Cherry Cream Soda", serif;
+  color: rgb(204, 182, 182);
 }
 
 html {
@@ -15,16 +16,6 @@ body {
 h1 {
   margin: 40vh auto 0vh auto;
   text-align: center;
-  color: rgb(204, 182, 182);
-}
-
-form {
-  color: white;
-}
-
-a {
-  color: white;
-  margin: 2vh 2vw;
 }
 
 .gif-test {
@@ -61,15 +52,20 @@ a {
   }
 }
 
-#scrollTest {
-  background-color: gray;
-  width: 20vw;
-  height: 10vh;
-  margin: 70vh auto;
-  color: white;
-  text-align: center;
-  border-radius: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#contactForm {
+  @include Flex-Col(center, center, initial, initial);
+  button, input, textarea {
+    color: black;
+  }
+  #scrollTest {
+    @include Flex-Row(center, center, initial, initial);
+    background-color: gray;
+    width: 20vw;
+    height: 10vh;
+    margin: 20vh auto;
+    color: white;
+    text-align: center;
+    border-radius: 1rem;
+  }
 }
+
