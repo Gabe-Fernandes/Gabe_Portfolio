@@ -1,9 +1,75 @@
+@import "_library.scss";
+
+* {
+  font-family: "Cherry Cream Soda", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: rgb(24, 20, 20);
 }
 
 h1 {
-  margin: 40vh auto;
+  margin: 40vh auto 0vh auto;
   text-align: center;
   color: rgb(204, 182, 182);
+}
+
+form {
+  color: white;
+}
+
+a {
+  color: white;
+  margin: 2vh 2vw;
+}
+
+.gif-test {
+  margin: 15vh 0vw;
+}
+
+.icon-wrap {
+  @include Flex-Col(center, center, initial, initial);
+  background-color: rgb(218, 210, 195);
+  border-radius: 1rem;
+  width: 80%;
+  padding: 1rem;
+  margin: 0 auto;
+  .left-div {
+    @include Flex-Row(center, center, initial, initial);
+  }
+  .right-div {
+    @include Flex-Row(center, center, initial, initial);
+  }
+  .icon-border {
+    width: 8.5rem;
+    height: 8.5rem;
+    margin: 2vh 1vw;
+  }
+  .tech-icon {
+    width: 8rem;
+    height: 8rem;
+    transition: width 0.3s, height 0.3s;
+    cursor: pointer;
+  }
+  .tech-icon-pop {
+    width: 8.5rem;
+    height: 8.5rem;
+  }
+}
+
+#scrollTest {
+  background-color: gray;
+  width: 20vw;
+  height: 10vh;
+  margin: 70vh auto;
+  color: white;
+  text-align: center;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

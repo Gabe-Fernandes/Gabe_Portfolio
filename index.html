@@ -5,9 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gabe's Portfolio</title>
   <link rel="stylesheet" href="dist/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cherry Cream Soda">
+  <script type="text/javascript" src="/node_modules/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
+  <a href="#scrollTest">Scroll</a>
+  <section id="landingPage"></section>
+  <section></section>
+  <section></section>
+  <section id="projects"></section>
+  <section></section>
+  <section id="contactForm">
+    <h1 class="text-center mb-3">Test Form</h1>
+    <form action="POST" id="contact" data-netlify="true" name="PortfolioContact">
+      <div class="row mb-1">
+          <div class="col">
+              <label class="form-label">First Name</label>
+              <input type="text" name="firstName" class="form-control" placeholder="First name"
+                  aria-label="First name" required>
+          </div>
+          <div class="col">
+              <label class="form-label">Last Name</label>
+              <input type="text" name="lastName" class="form-control" placeholder="Last name"
+                  aria-label="Last name" required>
+          </div>
+      </div>
+      <div class="row mb-1">
+          <div class="col">
+              <label class="form-label">Email</label>
+              <input type="email" name="email" class="form-control" placeholder="Email"
+                  aria-label="Email" required>
+          </div>
+      </div>
+      <div class="row mb-1">
+          <div class="col">
+              <label class="form-label">Subject</label>
+              <input type="text" name="subject" class="form-control" placeholder="Subject"
+                  aria-label="Subject" required>
+          </div>
+      </div>
+      <div class="row mb-1">
+          <div class="col">
+              <label class="form-label">Message</label>
+              <textarea type="text" name="message" class="form-control" placeholder="Message"
+                  aria-label="Message" required></textarea>
+          </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-2">Submit</button>
+    </form>
+  </section>
+
   <h1>This site is under construction...</h1>
+  <img src="/Gifs/ProjDashGif.gif" class="gif-test">
+  <br>
+  <br>
+  <div class="icon-wrap">
+    <div class="left-div">
+      <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" class="tech-icon"/></div>
+      <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-plain-wordmark.svg" class="tech-icon"/></div>
+      <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg" class="tech-icon"/></div>
+      <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain-wordmark.svg" class="tech-icon"/></div>
+      <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original-wordmark.svg" class="tech-icon"/></div>
+      <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original-wordmark.svg" class="tech-icon"/></div>
+      <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain-wordmark.svg" class="tech-icon"/></div>
+      <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original-wordmark.svg" class="tech-icon"/></div>
+      <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" class="tech-icon"/></div>
+    </div>
+    <div class="right-div">
+      <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" class="tech-icon"/></div>
+      <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" class="tech-icon"/></div>
+      <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="tech-icon"/></div>
+      <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" class="tech-icon"/></div>
+      <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original-wordmark.svg" class="tech-icon"/></div>
+      <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-plain-wordmark.svg" class="tech-icon"/></div>
+    </div>
+  </div>
+
+  <a id="scrollTest" href="#">Back to top</a>
 </body>
 </html>
