@@ -1,1 +1,291 @@
-*{font-family:"Cherry Cream Soda",serif;color:#ccb6b6}html{scroll-behavior:smooth}body{background-color:#181414}h1{margin:40vh auto 0vh auto;text-align:center}.gif-test{margin:15vh 0vw}.icon-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;width:initial;height:initial;background-color:#dad2c3;border-radius:1rem;width:80%;padding:1rem;margin:0 auto}.icon-wrap .left-div{display:flex;justify-content:center;align-items:center;width:initial;height:initial}.icon-wrap .right-div{display:flex;justify-content:center;align-items:center;width:initial;height:initial}.icon-wrap .icon-border{width:8.5rem;height:8.5rem;margin:2vh 1vw}.icon-wrap .tech-icon{width:8rem;height:8rem;transition:width .3s,height .3s;cursor:pointer}.icon-wrap .tech-icon-pop{width:8.5rem;height:8.5rem}#contactForm{display:flex;flex-direction:column;align-items:center;justify-content:center;width:initial;height:initial}#contactForm button,#contactForm input,#contactForm textarea{color:#000}#contactForm #scrollTest{display:flex;justify-content:center;align-items:center;width:initial;height:initial;background-color:gray;width:20vw;height:10vh;margin:20vh auto;color:#fff;text-align:center;border-radius:1rem}/*# sourceMappingURL=index.css.map */
+/*
+  HTML guide for sorting <th>
+
+  <th class="sortable-th" id="thFirstName">First Name</th>
+  <tbody id="manageUsersTbody">
+    <tr id="manageUsersTR_@i">
+      <td class="sortFirstName">Albert</td>
+*/
+* {
+  font-family: "Cherry Cream Soda", serif;
+  color: #1B1212;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F5F5DC;
+}
+
+h1 {
+  margin: 20vh auto 0vh auto;
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+  transition: filter 0.25s;
+  padding: 0.4rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 1rem;
+  background: #181e36;
+  color: #F5F5DC;
+  text-decoration: none;
+}
+
+.btn:hover {
+  filter: brightness(115%);
+}
+
+.btn:active {
+  transform: scale(0.94);
+  transform: translateY(5%);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.matrix-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 70vh;
+  margin: 5vh auto;
+}
+.matrix-container #horizontalMatrix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  height: 22vw;
+}
+.matrix-container #horizontalMatrix .matrix-bar {
+  background-color: #100a66;
+}
+.matrix-container #horizontalMatrix .side-bar {
+  width: 0.6vw;
+  height: 22vw;
+}
+.matrix-container #horizontalMatrix .middle-of-matrix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 28.8vw;
+  height: 22vw;
+}
+.matrix-container #horizontalMatrix .middle-of-matrix .horizontal-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28.8vw;
+  height: 0.6vw;
+}
+.matrix-container #horizontalMatrix .middle-of-matrix .horizontal-bar {
+  width: 3.6vw;
+  height: 0.6vw;
+}
+.matrix-container #horizontalMatrix .middle-of-matrix .horizontal-center-space {
+  width: 21.6vw;
+  height: 0.6vw;
+}
+.matrix-container #horizontalMatrix .middle-of-matrix .icon-wrap-vertical {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28.8vw;
+  height: 21.4vw;
+}
+.matrix-container #horizontalMatrix .middle-of-matrix .icon-wrap-horizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 28.8vw;
+  height: 21.4vw;
+}
+.matrix-container #horizontalMatrix .middle-of-matrix .element-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: initial;
+  height: initial;
+}
+.matrix-container #horizontalMatrix .middle-of-matrix .element-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: initial;
+  height: initial;
+}
+.matrix-container #horizontalMatrix .middle-of-matrix .icon-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7.8vw;
+  height: 7.8vw;
+  margin: 0.5vh 1vw;
+}
+.matrix-container #horizontalMatrix .middle-of-matrix .sql-background {
+  background-color: rgb(218, 210, 195);
+}
+.matrix-container #horizontalMatrix .middle-of-matrix .tech-icon {
+  width: 6.5vw;
+  height: 6.5vw;
+  transition: width 0.3s, height 0.3s;
+  cursor: pointer;
+}
+.matrix-container #horizontalMatrix .middle-of-matrix .tech-icon-pop {
+  width: 7.8vw;
+  height: 7.8vw;
+}
+.matrix-container .multiplication-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10vw;
+  height: 10vw;
+  position: relative;
+}
+.matrix-container .multiplication-wrap .multiplication-cross {
+  width: 0.8vw;
+  height: 6vw;
+  background-color: #100a66;
+  position: absolute;
+}
+.matrix-container .multiplication-wrap .cross1 {
+  transform: rotate(45deg);
+}
+.matrix-container .multiplication-wrap .cross2 {
+  transform: rotate(-45deg);
+}
+.matrix-container #verticalMatrix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22vw;
+  height: 30vw;
+}
+.matrix-container #verticalMatrix .matrix-bar {
+  background-color: #100a66;
+}
+.matrix-container #verticalMatrix .side-bar {
+  width: 0.6vw;
+  height: 30vw;
+}
+.matrix-container #verticalMatrix .middle-of-matrix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20.8vw;
+  height: 30vw;
+}
+.matrix-container #verticalMatrix .middle-of-matrix .horizontal-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20.8vw;
+  height: 0.6vw;
+}
+.matrix-container #verticalMatrix .middle-of-matrix .horizontal-bar {
+  width: 2.64vw;
+  height: 0.6vw;
+}
+.matrix-container #verticalMatrix .middle-of-matrix .horizontal-center-space {
+  width: 15.84vw;
+  height: 0.6vw;
+}
+.matrix-container #verticalMatrix .middle-of-matrix .icon-wrap-vertical {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20.8vw;
+  height: 29.4vw;
+}
+.matrix-container #verticalMatrix .middle-of-matrix .icon-wrap-horizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20.8vw;
+  height: 29.4vw;
+}
+.matrix-container #verticalMatrix .middle-of-matrix .element-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: initial;
+  height: initial;
+}
+.matrix-container #verticalMatrix .middle-of-matrix .element-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: initial;
+  height: initial;
+}
+.matrix-container #verticalMatrix .middle-of-matrix .icon-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7.8vw;
+  height: 7.8vw;
+  margin: 0.5vh 1vw;
+}
+.matrix-container #verticalMatrix .middle-of-matrix .sql-background {
+  background-color: rgb(218, 210, 195);
+}
+.matrix-container #verticalMatrix .middle-of-matrix .tech-icon {
+  width: 6.5vw;
+  height: 6.5vw;
+  transition: width 0.3s, height 0.3s;
+  cursor: pointer;
+}
+.matrix-container #verticalMatrix .middle-of-matrix .tech-icon-pop {
+  width: 7.8vw;
+  height: 7.8vw;
+}
+.matrix-container .equals-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10vw;
+  height: 10vw;
+  position: relative;
+}
+.matrix-container .equals-wrap .equals-bar {
+  width: 6vw;
+  height: 0.8vw;
+  background-color: #100a66;
+  position: absolute;
+}
+.matrix-container .equals-wrap .bar1 {
+  top: 35%;
+}
+.matrix-container .equals-wrap .bar2 {
+  bottom: 35%;
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: initial;
+  height: initial;
+}
+#contactForm input, #contactForm textarea {
+  color: #1B1212;
+}
+#contactForm #scrollTest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: initial;
+  height: initial;
+  color: #F5F5DC;
+}/*# sourceMappingURL=index.css.map */
