@@ -1,0 +1,80 @@
+@import "site.scss";
+
+@mixin Matrix($width, $height) {
+    @include Flex-Row(center, center, $width, $height);
+  
+    $scale: 0px;
+
+    @if $width < $height {
+      $scale: $height;
+    }
+    @else {
+      $scale: $width;
+    }
+  
+    .matrix-bar {
+      background-color: $cBlue;
+    }
+    .side-bar {
+      @include WidthHeight(0.02 * $scale, $height);
+    }
+    .middle-of-matrix {
+      @include Flex-Col(center, center, $width - 0.04 * $scale, $height);
+      .horizontal-wrap {
+        @include Flex-Row(center, center, $width - 0.04 * $scale, 0.02 * $scale);
+      }
+      .horizontal-bar {
+        @include WidthHeight(0.12 * $width, 0.02 * $scale);
+      }
+      .horizontal-center-space {
+        @include WidthHeight(0.72 * $width, 0.02 * $scale);
+      }
+      .icon-wrap-vertical {
+        @include Flex-Row(center, center, $width - 0.04 * $scale, $height - 0.02 * $scale);
+      }
+      .icon-wrap-horizontal {
+        @include Flex-Col(center, center, $width - 0.04 * $scale, $height - 0.02 * $scale);
+      }
+      .element-row {
+        @include Flex-Row(center, center, initial, initial);
+      }
+      .element-col {
+        @include Flex-Col(center, center, initial, initial);
+      }
+      .icon-border {
+        @include Flex-Row(center, center, 0.3 * ($width + $height) * 0.5, 0.3 * ($width + $height) * 0.5);
+        position: relative;
+        margin: 0.5vh 1vw;
+      }
+      .sql-background {
+        background-color: rgb(218, 210, 195);
+      }
+      .tech-icon {
+        @include WidthHeight(0.25 * ($width + $height) * 0.5, 0.25 * ($width + $height) * 0.5);
+        transition: width 0.3s, height 0.3s;
+        cursor: pointer;
+      }
+      .tech-icon-pop {
+        @include WidthHeight(0.3 * ($width + $height) * 0.5, 0.3 * ($width + $height) * 0.5);
+      }
+      .anim-tech-icon {
+        @include WidthHeight(0.25 * ($width + $height) * 0.5, 0.25 * ($width + $height) * 0.5);
+        position: absolute;
+        opacity: 0%;
+        pointer-events: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .anim-tech-icon-clicked {
+        @include WidthHeight(0.3 * ($width + $height) * 0.5, 0.3 * ($width + $height) * 0.5);
+      }
+      .anim-tech-icon-transitions {
+        @include WidthHeight(0.15 * ($width + $height) * 0.5, 0.15 * ($width + $height) * 0.5);
+        opacity: 100%;
+        z-index: $zModal;
+        transition: left 2s, top 2s, height 2s, width 2s;
+      }
+    }
+  }
+  

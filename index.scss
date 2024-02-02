@@ -1,151 +1,58 @@
 @import "_library.scss";
+@import "_localLibrary.scss";
 
-// local library
-
-@mixin Matrix($width, $height) {
-  @include Flex-Row(center, center, $width, $height);
-
-  $scale: 0px;
-  @if $width < $height {
-    $scale: $height;
-  }
-  @else {
-    $scale: $width;
-  }
-
-  .matrix-bar {
-    background-color: $cBlue;
-  }
-  .side-bar {
-    @include WidthHeight(0.02 * $scale, $height);
-  }
-  .middle-of-matrix {
-    @include Flex-Col(center, center, $width - 0.04 * $scale, $height);
-    .horizontal-wrap {
-      @include Flex-Row(center, center, $width - 0.04 * $scale, 0.02 * $scale);
-    }
-    .horizontal-bar {
-      @include WidthHeight(0.12 * $width, 0.02 * $scale);
-    }
-    .horizontal-center-space {
-      @include WidthHeight(0.72 * $width, 0.02 * $scale);
-    }
-    .icon-wrap-vertical {
-      @include Flex-Row(center, center, $width - 0.04 * $scale, $height - 0.02 * $scale);
-    }
-    .icon-wrap-horizontal {
-      @include Flex-Col(center, center, $width - 0.04 * $scale, $height - 0.02 * $scale);
-    }
-    .element-row {
-      @include Flex-Row(center, center, initial, initial);
-    }
-    .element-col {
-      @include Flex-Col(center, center, initial, initial);
-    }
-    .icon-border {
-      @include Flex-Row(center, center, 0.3 * ($width + $height) / 2, 0.3 * ($width + $height) / 2);
-      margin: 0.5vh 1vw;
-    }
-    .sql-background {
-      background-color: rgb(218, 210, 195);
-    }
-    .tech-icon {
-      @include WidthHeight(0.25 * ($width + $height) / 2, 0.25 * ($width + $height) / 2);
-      transition: width 0.3s, height 0.3s;
-      cursor: pointer;
-    }
-    .tech-icon-pop {
-      @include WidthHeight(0.3 * ($width + $height) / 2, 0.3 * ($width + $height) / 2);
-    }
-  }
+.portfolio-section {
+  height: 90vh;
+  border: 1px black solid;
 }
 
-// general styles
-
-$cBlue: #100a66;
-$cGold: #a67c00;
-$cBrown: #471900;
-$cWhite: #F5F5DC;
-$cBlack: #1B1212;
-
-* {
-  font-family: "Cherry Cream Soda", serif;
-  color: $cBlack;
+#projectsSection {
+  @include Flex-Row(center, center, initial, 90vh);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: $cWhite;
-}
-
-h1 {
-  margin: 20vh auto 0vh auto;
-  text-align: center;
-}
-
-.btn {
-  cursor: pointer;
-  transition: filter 0.25s;
-  padding: 0.4rem 1rem;
-  font-size: 1.1rem;
-  border-radius: 1rem;
-  background: $cHighlightSoft;
-  color: $cWhite;
-  text-decoration: none;
-}
-.btn:hover {
-  filter: brightness(115%);
-}
-.btn:active {
-  transform: scale(0.94);
-  transform: translateY(5%);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-}
-
-.matrix-container {
-  @include Flex-Row(center, center, 90vw, 70vh);
-  margin: 5vh auto;
-
-  #horizontalMatrix {
-    @include Matrix(30vw, 22vw);
-  }
-
-  .multiplication-wrap {
-    @include Flex-Row(center, center, 10vw, 10vw);
-    position: relative;
-    .multiplication-cross {
-      @include WidthHeight(0.8vw, 6vw);
-      background-color: $cBlue;
-      position: absolute;
-    }
-    .cross1 {
-      transform: rotate(45deg);
-    }
-    .cross2 {
-      transform: rotate(-45deg);
-    }
-  }
+#techStackSection {
+  .matrix-container {
+    @include Flex-Row(center, center, 90vw, 70vh);
+    margin: 5vh auto;
   
-  #verticalMatrix {
-    @include Matrix(22vw, 30vw);
-  }
-
-  .equals-wrap {
-    @include Flex-Row(center, center, 10vw, 10vw);
-    position: relative;
-    .equals-bar {
-      @include WidthHeight(6vw, 0.8vw);
-      background-color: $cBlue;
-      position: absolute;
+    #horizontalMatrix {
+      @include Matrix(30vw, 22vw);
     }
-    .bar1 {
-      top: 35%;
+  
+    .multiplication-wrap {
+      @include Flex-Row(center, center, 10vw, 10vw);
+      position: relative;
+      .multiplication-cross {
+        @include WidthHeight(0.8vw, 6vw);
+        background-color: $cBlue;
+        position: absolute;
+      }
+      .cross1 {
+        transform: rotate(45deg);
+      }
+      .cross2 {
+        transform: rotate(-45deg);
+      }
     }
-    .bar2 {
-      bottom: 35%;
+    
+    #verticalMatrix {
+      @include Matrix(22vw, 30vw);
+    }
+  
+    .equals-wrap {
+      @include Flex-Row(center, center, 10vw, 10vw);
+      position: relative;
+      .equals-bar {
+        @include WidthHeight(6vw, 0.8vw);
+        background-color: $cBlue;
+        position: absolute;
+      }
+      .bar1 {
+        top: 35%;
+      }
+      .bar2 {
+        bottom: 35%;
+      }
     }
   }
 }
@@ -158,5 +65,87 @@ h1 {
   #scrollTest {
     @include Flex-Row(center, center, initial, initial);
     color: $cWhite;
+  }
+}
+
+.test {
+  @include WidthHeight(0.15 * 52vw * 0.5, 0.15 * 52vw * 0.5);
+  position: absolute;
+  opacity: 100% !important;
+  pointer-events: none;
+  top: -75%;
+  left: 100%;
+}
+.test-transitions {
+  z-index: $zModal;
+  #h00_0 { top: 34%; left: 0%; transition: top 1s, left 1s}
+  #v00_0 { top: 34%; left: 17%; transition: top 1s, left 1s}
+  #h01_0 { top: 34%; left: 37%; transition: top 1s, left 1s}
+  #v01_0 { top: 34%; left: 54%; transition: top 1s, left 1s}
+  #h02_0 { top: 34%; left: 74%; transition: top 1s, left 1s}
+  #v02_0 { top: 34%; left: 90%; transition: top 1s, left 1s}
+
+  #h10_0 { top: 34%; left: 0%; transition: top 1s, left 1s}
+  #v00_1 { top: 34%; left: 17%; transition: top 1s, left 1s}
+  #h11_0 { top: 34%; left: 37%; transition: top 1s, left 1s}
+  #v01_1 { top: 34%; left: 54%; transition: top 1s, left 1s}
+  #h12_0 { top: 34%; left: 74%; transition: top 1s, left 1s}
+  #v02_1 { top: 34%; left: 90%; transition: top 1s, left 1s}
+
+  #h00_1 { top: 34%; left: 0%; transition: top 1s, left 1s}
+  #v10_0 { top: 34%; left: 17%; transition: top 1s, left 1s}
+  #h01_1 { top: 34%; left: 37%; transition: top 1s, left 1s}
+  #v11_0 { top: 34%; left: 54%; transition: top 1s, left 1s}
+  #h02_1 { top: 34%; left: 74%; transition: top 1s, left 1s}
+  #v12_0 { top: 34%; left: 90%; transition: top 1s, left 1s}
+
+  #h10_1 { top: 34%; left: 0%; transition: top 1s, left 1s}
+  #v10_1 { top: 34%; left: 17%; transition: top 1s, left 1s}
+  #h11_1 { top: 34%; left: 37%; transition: top 1s, left 1s}
+  #v11_1 { top: 34%; left: 54%; transition: top 1s, left 1s}
+  #h12_1 { top: 34%; left: 74%; transition: top 1s, left 1s}
+  #v12_1 { top: 34%; left: 90%; transition: top 1s, left 1s}
+}
+
+.tech-icon-modal {
+  @include Modal(90vw, 80vh, $cBlack);
+  background-color: $cWhite;
+  position: relative;
+  #squareMatrix {
+    @include Matrix(85vw, 28vw);
+    .expression {
+      @include Flex-Row(center, center, 40vw, 12vw);
+      position: relative;
+    }
+    .plus-sign {
+      width: 10%;
+      position: relative;
+      .verti-plus {
+        @include WidthHeight(0.5vw, 2vw);
+        background-color: $cBlue;
+        border-radius: 1rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .hori-plus {
+        @include WidthHeight(2vw, 0.5vw);
+        background-color: $cBlue;
+        border-radius: 1rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .dot-sign {
+      @include Flex-Row(center, center, 30%, initial);
+      .dot {
+        @include WidthHeight(1vw, 1vw);
+        background-color: $cBlue;
+        border-radius: 50%;
+      }
+    }
   }
 }

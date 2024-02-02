@@ -6,6 +6,14 @@
     <tr id="manageUsersTR_@i">
       <td class="sortFirstName">Albert</td>
 */
+/*
+  HTML guide for sorting <th>
+
+  <th class="sortable-th" id="thFirstName">First Name</th>
+  <tbody id="manageUsersTbody">
+    <tr id="manageUsersTR_@i">
+      <td class="sortFirstName">Albert</td>
+*/
 * {
   font-family: "Cherry Cream Soda", serif;
   color: #1B1212;
@@ -45,7 +53,92 @@ h1 {
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
-.matrix-container {
+.hide {
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0% !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+}
+
+.modal-hide {
+  opacity: 0% !important;
+  pointer-events: none !important;
+}
+
+.screen-tint {
+  width: 100vw;
+  height: 100vh;
+  display: initial;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 4;
+  transition: opacity 0.4s, background-color 0.4s;
+}
+
+.unclickable {
+  pointer-events: none;
+  filter: blur(0.2rem);
+}
+
+.close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  margin: 0rem 0.5rem;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 1rem;
+  margin: 0;
+  top: 3%;
+  right: 3%;
+}
+.close-btn img {
+  height: 2rem;
+  width: 2rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  border-radius: 50%;
+}
+
+::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.5rem #F5F5DC;
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #100a66;
+  border-radius: 0.5rem;
+}
+
+.portfolio-section {
+  height: 90vh;
+  border: 1px black solid;
+}
+
+#projectsSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: initial;
+  height: 90vh;
+}
+
+#techStackSection .matrix-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,21 +146,21 @@ h1 {
   height: 70vh;
   margin: 5vh auto;
 }
-.matrix-container #horizontalMatrix {
+#techStackSection .matrix-container #horizontalMatrix {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 30vw;
   height: 22vw;
 }
-.matrix-container #horizontalMatrix .matrix-bar {
+#techStackSection .matrix-container #horizontalMatrix .matrix-bar {
   background-color: #100a66;
 }
-.matrix-container #horizontalMatrix .side-bar {
+#techStackSection .matrix-container #horizontalMatrix .side-bar {
   width: 0.6vw;
   height: 22vw;
 }
-.matrix-container #horizontalMatrix .middle-of-matrix {
+#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,29 +168,29 @@ h1 {
   width: 28.8vw;
   height: 22vw;
 }
-.matrix-container #horizontalMatrix .middle-of-matrix .horizontal-wrap {
+#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .horizontal-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 28.8vw;
   height: 0.6vw;
 }
-.matrix-container #horizontalMatrix .middle-of-matrix .horizontal-bar {
+#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .horizontal-bar {
   width: 3.6vw;
   height: 0.6vw;
 }
-.matrix-container #horizontalMatrix .middle-of-matrix .horizontal-center-space {
+#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .horizontal-center-space {
   width: 21.6vw;
   height: 0.6vw;
 }
-.matrix-container #horizontalMatrix .middle-of-matrix .icon-wrap-vertical {
+#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .icon-wrap-vertical {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 28.8vw;
   height: 21.4vw;
 }
-.matrix-container #horizontalMatrix .middle-of-matrix .icon-wrap-horizontal {
+#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .icon-wrap-horizontal {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,14 +198,14 @@ h1 {
   width: 28.8vw;
   height: 21.4vw;
 }
-.matrix-container #horizontalMatrix .middle-of-matrix .element-row {
+#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .element-row {
   display: flex;
   justify-content: center;
   align-items: center;
   width: initial;
   height: initial;
 }
-.matrix-container #horizontalMatrix .middle-of-matrix .element-col {
+#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .element-col {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,28 +213,50 @@ h1 {
   width: initial;
   height: initial;
 }
-.matrix-container #horizontalMatrix .middle-of-matrix .icon-border {
+#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .icon-border {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 7.8vw;
   height: 7.8vw;
+  position: relative;
   margin: 0.5vh 1vw;
 }
-.matrix-container #horizontalMatrix .middle-of-matrix .sql-background {
+#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .sql-background {
   background-color: rgb(218, 210, 195);
 }
-.matrix-container #horizontalMatrix .middle-of-matrix .tech-icon {
+#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .tech-icon {
   width: 6.5vw;
   height: 6.5vw;
   transition: width 0.3s, height 0.3s;
   cursor: pointer;
 }
-.matrix-container #horizontalMatrix .middle-of-matrix .tech-icon-pop {
+#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .tech-icon-pop {
   width: 7.8vw;
   height: 7.8vw;
 }
-.matrix-container .multiplication-wrap {
+#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .anim-tech-icon {
+  width: 6.5vw;
+  height: 6.5vw;
+  position: absolute;
+  opacity: 0%;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .anim-tech-icon-clicked {
+  width: 7.8vw;
+  height: 7.8vw;
+}
+#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .anim-tech-icon-transitions {
+  width: 3.9vw;
+  height: 3.9vw;
+  opacity: 100%;
+  z-index: 5;
+  transition: left 2s, top 2s, height 2s, width 2s;
+}
+#techStackSection .matrix-container .multiplication-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -149,33 +264,33 @@ h1 {
   height: 10vw;
   position: relative;
 }
-.matrix-container .multiplication-wrap .multiplication-cross {
+#techStackSection .matrix-container .multiplication-wrap .multiplication-cross {
   width: 0.8vw;
   height: 6vw;
   background-color: #100a66;
   position: absolute;
 }
-.matrix-container .multiplication-wrap .cross1 {
+#techStackSection .matrix-container .multiplication-wrap .cross1 {
   transform: rotate(45deg);
 }
-.matrix-container .multiplication-wrap .cross2 {
+#techStackSection .matrix-container .multiplication-wrap .cross2 {
   transform: rotate(-45deg);
 }
-.matrix-container #verticalMatrix {
+#techStackSection .matrix-container #verticalMatrix {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 22vw;
   height: 30vw;
 }
-.matrix-container #verticalMatrix .matrix-bar {
+#techStackSection .matrix-container #verticalMatrix .matrix-bar {
   background-color: #100a66;
 }
-.matrix-container #verticalMatrix .side-bar {
+#techStackSection .matrix-container #verticalMatrix .side-bar {
   width: 0.6vw;
   height: 30vw;
 }
-.matrix-container #verticalMatrix .middle-of-matrix {
+#techStackSection .matrix-container #verticalMatrix .middle-of-matrix {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -183,29 +298,29 @@ h1 {
   width: 20.8vw;
   height: 30vw;
 }
-.matrix-container #verticalMatrix .middle-of-matrix .horizontal-wrap {
+#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .horizontal-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 20.8vw;
   height: 0.6vw;
 }
-.matrix-container #verticalMatrix .middle-of-matrix .horizontal-bar {
+#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .horizontal-bar {
   width: 2.64vw;
   height: 0.6vw;
 }
-.matrix-container #verticalMatrix .middle-of-matrix .horizontal-center-space {
+#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .horizontal-center-space {
   width: 15.84vw;
   height: 0.6vw;
 }
-.matrix-container #verticalMatrix .middle-of-matrix .icon-wrap-vertical {
+#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .icon-wrap-vertical {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 20.8vw;
   height: 29.4vw;
 }
-.matrix-container #verticalMatrix .middle-of-matrix .icon-wrap-horizontal {
+#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .icon-wrap-horizontal {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -213,14 +328,14 @@ h1 {
   width: 20.8vw;
   height: 29.4vw;
 }
-.matrix-container #verticalMatrix .middle-of-matrix .element-row {
+#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .element-row {
   display: flex;
   justify-content: center;
   align-items: center;
   width: initial;
   height: initial;
 }
-.matrix-container #verticalMatrix .middle-of-matrix .element-col {
+#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .element-col {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -228,28 +343,50 @@ h1 {
   width: initial;
   height: initial;
 }
-.matrix-container #verticalMatrix .middle-of-matrix .icon-border {
+#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .icon-border {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 7.8vw;
   height: 7.8vw;
+  position: relative;
   margin: 0.5vh 1vw;
 }
-.matrix-container #verticalMatrix .middle-of-matrix .sql-background {
+#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .sql-background {
   background-color: rgb(218, 210, 195);
 }
-.matrix-container #verticalMatrix .middle-of-matrix .tech-icon {
+#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .tech-icon {
   width: 6.5vw;
   height: 6.5vw;
   transition: width 0.3s, height 0.3s;
   cursor: pointer;
 }
-.matrix-container #verticalMatrix .middle-of-matrix .tech-icon-pop {
+#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .tech-icon-pop {
   width: 7.8vw;
   height: 7.8vw;
 }
-.matrix-container .equals-wrap {
+#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .anim-tech-icon {
+  width: 6.5vw;
+  height: 6.5vw;
+  position: absolute;
+  opacity: 0%;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .anim-tech-icon-clicked {
+  width: 7.8vw;
+  height: 7.8vw;
+}
+#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .anim-tech-icon-transitions {
+  width: 3.9vw;
+  height: 3.9vw;
+  opacity: 100%;
+  z-index: 5;
+  transition: left 2s, top 2s, height 2s, width 2s;
+}
+#techStackSection .matrix-container .equals-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -257,16 +394,16 @@ h1 {
   height: 10vw;
   position: relative;
 }
-.matrix-container .equals-wrap .equals-bar {
+#techStackSection .matrix-container .equals-wrap .equals-bar {
   width: 6vw;
   height: 0.8vw;
   background-color: #100a66;
   position: absolute;
 }
-.matrix-container .equals-wrap .bar1 {
+#techStackSection .matrix-container .equals-wrap .bar1 {
   top: 35%;
 }
-.matrix-container .equals-wrap .bar2 {
+#techStackSection .matrix-container .equals-wrap .bar2 {
   bottom: 35%;
 }
 
@@ -288,4 +425,312 @@ h1 {
   width: initial;
   height: initial;
   color: #F5F5DC;
+}
+
+.test {
+  width: 3.9vw;
+  height: 3.9vw;
+  position: absolute;
+  opacity: 100% !important;
+  pointer-events: none;
+  top: -75%;
+  left: 100%;
+}
+
+.test-transitions {
+  z-index: 5;
+}
+.test-transitions #h00_0 {
+  top: 34%;
+  left: 0%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #v00_0 {
+  top: 34%;
+  left: 17%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #h01_0 {
+  top: 34%;
+  left: 37%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #v01_0 {
+  top: 34%;
+  left: 54%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #h02_0 {
+  top: 34%;
+  left: 74%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #v02_0 {
+  top: 34%;
+  left: 90%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #h10_0 {
+  top: 34%;
+  left: 0%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #v00_1 {
+  top: 34%;
+  left: 17%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #h11_0 {
+  top: 34%;
+  left: 37%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #v01_1 {
+  top: 34%;
+  left: 54%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #h12_0 {
+  top: 34%;
+  left: 74%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #v02_1 {
+  top: 34%;
+  left: 90%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #h00_1 {
+  top: 34%;
+  left: 0%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #v10_0 {
+  top: 34%;
+  left: 17%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #h01_1 {
+  top: 34%;
+  left: 37%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #v11_0 {
+  top: 34%;
+  left: 54%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #h02_1 {
+  top: 34%;
+  left: 74%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #v12_0 {
+  top: 34%;
+  left: 90%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #h10_1 {
+  top: 34%;
+  left: 0%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #v10_1 {
+  top: 34%;
+  left: 17%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #h11_1 {
+  top: 34%;
+  left: 37%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #v11_1 {
+  top: 34%;
+  left: 54%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #h12_1 {
+  top: 34%;
+  left: 74%;
+  transition: top 1s, left 1s;
+}
+.test-transitions #v12_1 {
+  top: 34%;
+  left: 90%;
+  transition: top 1s, left 1s;
+}
+
+.tech-icon-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  height: 80vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  background-color: #2E3349;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.2rem 0.1rem #1B1212;
+  background-color: #F5F5DC;
+  position: relative;
+}
+.tech-icon-modal #squareMatrix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85vw;
+  height: 28vw;
+}
+.tech-icon-modal #squareMatrix .matrix-bar {
+  background-color: #100a66;
+}
+.tech-icon-modal #squareMatrix .side-bar {
+  width: 1.7vw;
+  height: 28vw;
+}
+.tech-icon-modal #squareMatrix .middle-of-matrix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 81.6vw;
+  height: 28vw;
+}
+.tech-icon-modal #squareMatrix .middle-of-matrix .horizontal-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 81.6vw;
+  height: 1.7vw;
+}
+.tech-icon-modal #squareMatrix .middle-of-matrix .horizontal-bar {
+  width: 10.2vw;
+  height: 1.7vw;
+}
+.tech-icon-modal #squareMatrix .middle-of-matrix .horizontal-center-space {
+  width: 61.2vw;
+  height: 1.7vw;
+}
+.tech-icon-modal #squareMatrix .middle-of-matrix .icon-wrap-vertical {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 81.6vw;
+  height: 26.3vw;
+}
+.tech-icon-modal #squareMatrix .middle-of-matrix .icon-wrap-horizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 81.6vw;
+  height: 26.3vw;
+}
+.tech-icon-modal #squareMatrix .middle-of-matrix .element-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: initial;
+  height: initial;
+}
+.tech-icon-modal #squareMatrix .middle-of-matrix .element-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: initial;
+  height: initial;
+}
+.tech-icon-modal #squareMatrix .middle-of-matrix .icon-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16.95vw;
+  height: 16.95vw;
+  position: relative;
+  margin: 0.5vh 1vw;
+}
+.tech-icon-modal #squareMatrix .middle-of-matrix .sql-background {
+  background-color: rgb(218, 210, 195);
+}
+.tech-icon-modal #squareMatrix .middle-of-matrix .tech-icon {
+  width: 14.125vw;
+  height: 14.125vw;
+  transition: width 0.3s, height 0.3s;
+  cursor: pointer;
+}
+.tech-icon-modal #squareMatrix .middle-of-matrix .tech-icon-pop {
+  width: 16.95vw;
+  height: 16.95vw;
+}
+.tech-icon-modal #squareMatrix .middle-of-matrix .anim-tech-icon {
+  width: 14.125vw;
+  height: 14.125vw;
+  position: absolute;
+  opacity: 0%;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.tech-icon-modal #squareMatrix .middle-of-matrix .anim-tech-icon-clicked {
+  width: 16.95vw;
+  height: 16.95vw;
+}
+.tech-icon-modal #squareMatrix .middle-of-matrix .anim-tech-icon-transitions {
+  width: 8.475vw;
+  height: 8.475vw;
+  opacity: 100%;
+  z-index: 5;
+  transition: left 2s, top 2s, height 2s, width 2s;
+}
+.tech-icon-modal #squareMatrix .expression {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  height: 12vw;
+  position: relative;
+}
+.tech-icon-modal #squareMatrix .plus-sign {
+  width: 10%;
+  position: relative;
+}
+.tech-icon-modal #squareMatrix .plus-sign .verti-plus {
+  width: 0.5vw;
+  height: 2vw;
+  background-color: #100a66;
+  border-radius: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.tech-icon-modal #squareMatrix .plus-sign .hori-plus {
+  width: 2vw;
+  height: 0.5vw;
+  background-color: #100a66;
+  border-radius: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.tech-icon-modal #squareMatrix .dot-sign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: initial;
+}
+.tech-icon-modal #squareMatrix .dot-sign .dot {
+  width: 1vw;
+  height: 1vw;
+  background-color: #100a66;
+  border-radius: 50%;
 }/*# sourceMappingURL=index.css.map */
