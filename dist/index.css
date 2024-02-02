@@ -235,27 +235,6 @@ h1 {
   width: 7.8vw;
   height: 7.8vw;
 }
-#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .anim-tech-icon {
-  width: 6.5vw;
-  height: 6.5vw;
-  position: absolute;
-  opacity: 0%;
-  pointer-events: none;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .anim-tech-icon-clicked {
-  width: 7.8vw;
-  height: 7.8vw;
-}
-#techStackSection .matrix-container #horizontalMatrix .middle-of-matrix .anim-tech-icon-transitions {
-  width: 3.9vw;
-  height: 3.9vw;
-  opacity: 100%;
-  z-index: 5;
-  transition: left 2s, top 2s, height 2s, width 2s;
-}
 #techStackSection .matrix-container .multiplication-wrap {
   display: flex;
   justify-content: center;
@@ -365,27 +344,6 @@ h1 {
   width: 7.8vw;
   height: 7.8vw;
 }
-#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .anim-tech-icon {
-  width: 6.5vw;
-  height: 6.5vw;
-  position: absolute;
-  opacity: 0%;
-  pointer-events: none;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .anim-tech-icon-clicked {
-  width: 7.8vw;
-  height: 7.8vw;
-}
-#techStackSection .matrix-container #verticalMatrix .middle-of-matrix .anim-tech-icon-transitions {
-  width: 3.9vw;
-  height: 3.9vw;
-  opacity: 100%;
-  z-index: 5;
-  transition: left 2s, top 2s, height 2s, width 2s;
-}
 #techStackSection .matrix-container .equals-wrap {
   display: flex;
   justify-content: center;
@@ -427,138 +385,157 @@ h1 {
   color: #F5F5DC;
 }
 
-.test {
+.anim-icon {
   width: 3.9vw;
   height: 3.9vw;
   position: absolute;
-  opacity: 100% !important;
   pointer-events: none;
   top: -75%;
   left: 100%;
 }
 
-.test-transitions {
+.anim-icon-transitions {
   z-index: 5;
 }
-.test-transitions #h00_0 {
+.anim-icon-transitions #h00_0 {
   top: 34%;
   left: 0%;
-  transition: top 1s, left 1s;
+  transition: top 1.1s, left 1.1s, opacity 0.3s;
 }
-.test-transitions #v00_0 {
+.anim-icon-transitions #v00_0 {
   top: 34%;
   left: 17%;
-  transition: top 1s, left 1s;
+  transition: top 1.8s, left 1.8s, opacity 0.3s;
 }
-.test-transitions #h01_0 {
+.anim-icon-transitions #h01_0 {
   top: 34%;
   left: 37%;
-  transition: top 1s, left 1s;
+  transition: top 1.4s, left 1.4s, opacity 0.3s;
 }
-.test-transitions #v01_0 {
+.anim-icon-transitions #v01_0 {
   top: 34%;
   left: 54%;
-  transition: top 1s, left 1s;
+  transition: top 1.9s, left 1.9s, opacity 0.3s;
 }
-.test-transitions #h02_0 {
+.anim-icon-transitions #h02_0 {
   top: 34%;
   left: 74%;
-  transition: top 1s, left 1s;
+  transition: top 1.3s, left 1.3s, opacity 0.3s;
 }
-.test-transitions #v02_0 {
+.anim-icon-transitions #v02_0 {
   top: 34%;
   left: 90%;
-  transition: top 1s, left 1s;
+  transition: top 1.7s, left 1.7s, opacity 0.3s;
 }
-.test-transitions #h10_0 {
+.anim-icon-transitions #h10_0 {
   top: 34%;
   left: 0%;
-  transition: top 1s, left 1s;
+  transition: top 1s, left 1s, opacity 0.3s;
 }
-.test-transitions #v00_1 {
+.anim-icon-transitions #v00_1 {
   top: 34%;
   left: 17%;
-  transition: top 1s, left 1s;
+  transition: top 1.2s, left 1.2s, opacity 0.3s;
 }
-.test-transitions #h11_0 {
+.anim-icon-transitions #h11_0 {
   top: 34%;
   left: 37%;
-  transition: top 1s, left 1s;
+  transition: top 1.6s, left 1.6s, opacity 0.3s;
 }
-.test-transitions #v01_1 {
+.anim-icon-transitions #v01_1 {
   top: 34%;
   left: 54%;
-  transition: top 1s, left 1s;
+  transition: top 1.7s, left 1.7s, opacity 0.3s;
 }
-.test-transitions #h12_0 {
+.anim-icon-transitions #h12_0 {
   top: 34%;
   left: 74%;
-  transition: top 1s, left 1s;
+  transition: top 1.3s, left 1.3s, opacity 0.3s;
 }
-.test-transitions #v02_1 {
+.anim-icon-transitions #v02_1 {
   top: 34%;
   left: 90%;
-  transition: top 1s, left 1s;
+  transition: top 1.1s, left 1.1s, opacity 0.3s;
 }
-.test-transitions #h00_1 {
+.anim-icon-transitions #h00_1 {
   top: 34%;
   left: 0%;
-  transition: top 1s, left 1s;
+  transition: top 1.4s, left 1.4s, opacity 0.3s;
 }
-.test-transitions #v10_0 {
+.anim-icon-transitions #v10_0 {
   top: 34%;
   left: 17%;
-  transition: top 1s, left 1s;
+  transition: top 1.9s, left 1.9s, opacity 0.3s;
 }
-.test-transitions #h01_1 {
+.anim-icon-transitions #h01_1 {
   top: 34%;
   left: 37%;
-  transition: top 1s, left 1s;
+  transition: top 1.2s, left 1.2s, opacity 0.3s;
 }
-.test-transitions #v11_0 {
+.anim-icon-transitions #v11_0 {
   top: 34%;
   left: 54%;
-  transition: top 1s, left 1s;
+  transition: top 1.8s, left 1.8s, opacity 0.3s;
 }
-.test-transitions #h02_1 {
+.anim-icon-transitions #h02_1 {
   top: 34%;
   left: 74%;
-  transition: top 1s, left 1s;
+  transition: top 1.3s, left 1.3s, opacity 0.3s;
 }
-.test-transitions #v12_0 {
+.anim-icon-transitions #v12_0 {
   top: 34%;
   left: 90%;
-  transition: top 1s, left 1s;
+  transition: top 1.5s, left 1.5s, opacity 0.3s;
 }
-.test-transitions #h10_1 {
+.anim-icon-transitions #h10_1 {
   top: 34%;
   left: 0%;
-  transition: top 1s, left 1s;
+  transition: top 1.5s, left 1.5s, opacity 0.3s;
 }
-.test-transitions #v10_1 {
+.anim-icon-transitions #v10_1 {
   top: 34%;
   left: 17%;
-  transition: top 1s, left 1s;
+  transition: top 1.4s, left 1.4s, opacity 0.3s;
 }
-.test-transitions #h11_1 {
+.anim-icon-transitions #h11_1 {
   top: 34%;
   left: 37%;
-  transition: top 1s, left 1s;
+  transition: top 1.1s, left 1.1s, opacity 0.3s;
 }
-.test-transitions #v11_1 {
+.anim-icon-transitions #v11_1 {
   top: 34%;
   left: 54%;
-  transition: top 1s, left 1s;
+  transition: top 1.6s, left 1.6s, opacity 0.3s;
 }
-.test-transitions #h12_1 {
+.anim-icon-transitions #h12_1 {
   top: 34%;
   left: 74%;
-  transition: top 1s, left 1s;
+  transition: top 1.3s, left 1.3s, opacity 0.3s;
 }
-.test-transitions #v12_1 {
+.anim-icon-transitions #v12_1 {
   top: 34%;
   left: 90%;
-  transition: top 1s, left 1s;
+  transition: top 1.8s, left 1.8s, opacity 0.3s;
+}
+
+.hide-anim-icons .dot-sign {
+  opacity: 0%;
+}
+.hide-anim-icons .plus-sign {
+  opacity: 0%;
+}
+.hide-anim-icons .anim-icon {
+  opacity: 0%;
+}
+
+.clear-expression-divs {
+  display: block !important;
+}
+.clear-expression-divs .dot-sign {
+  position: absolute;
+}
+.clear-expression-divs .plus-sign {
+  position: absolute;
 }
 
 .tech-icon-modal {
@@ -668,27 +645,6 @@ h1 {
   width: 16.95vw;
   height: 16.95vw;
 }
-.tech-icon-modal #squareMatrix .middle-of-matrix .anim-tech-icon {
-  width: 14.125vw;
-  height: 14.125vw;
-  position: absolute;
-  opacity: 0%;
-  pointer-events: none;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.tech-icon-modal #squareMatrix .middle-of-matrix .anim-tech-icon-clicked {
-  width: 16.95vw;
-  height: 16.95vw;
-}
-.tech-icon-modal #squareMatrix .middle-of-matrix .anim-tech-icon-transitions {
-  width: 8.475vw;
-  height: 8.475vw;
-  opacity: 100%;
-  z-index: 5;
-  transition: left 2s, top 2s, height 2s, width 2s;
-}
 .tech-icon-modal #squareMatrix .expression {
   display: flex;
   justify-content: center;
@@ -700,6 +656,7 @@ h1 {
 .tech-icon-modal #squareMatrix .plus-sign {
   width: 10%;
   position: relative;
+  transition: opacity 0.3s;
 }
 .tech-icon-modal #squareMatrix .plus-sign .verti-plus {
   width: 0.5vw;
@@ -727,10 +684,28 @@ h1 {
   align-items: center;
   width: 30%;
   height: initial;
+  transition: opacity 0.3s;
 }
 .tech-icon-modal #squareMatrix .dot-sign .dot {
   width: 1vw;
   height: 1vw;
   background-color: #100a66;
   border-radius: 50%;
+}
+
+.tech-highlight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s;
+}
+.tech-highlight img {
+  width: 100%;
+  height: 100%;
+}
+.tech-highlight .highlight-icon {
+  width: 10rem;
+  height: 10rem;
 }/*# sourceMappingURL=index.css.map */
