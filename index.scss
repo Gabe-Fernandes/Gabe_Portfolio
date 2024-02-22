@@ -185,6 +185,7 @@
 .tech-highlight {
   @include Flex-Row(center, center, 100%, 100%);
   transition: opacity 0.3s;
+  margin: 0 auto;
   img {
     @include WidthHeight(80%, 90%);
   }
