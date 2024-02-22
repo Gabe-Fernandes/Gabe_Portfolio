@@ -19,6 +19,14 @@ $(function (){
   }
 
   // site content
+
+  async function matrixAnimation() {
+    $(".tech-icon").addClass("hide");
+    ToggleModal($("#portfolioContent"), $("#techIconModal"), openModal);
+    await delay(100);
+    $(".expression").addClass("anim-icon-transitions");
+  }
+
   $(".tech-icon").on("mouseover", (event) => {
     $(event.target).addClass("tech-icon-pop");
     if ($(event.target).parent().hasClass("tech-icon")) {
@@ -32,16 +40,15 @@ $(function (){
     }
   });
 
-  $(".tech-icon").on("click", async () => {
-    $(".tech-icon").addClass("hide");
+  $(".tech-icon").on("click", (event) => {
     ToggleModal($("#portfolioContent"), $("#techIconModal"), openModal);
-    await delay(100);
-    $(".expression").addClass("anim-icon-transitions");
-    await delay(1400);
     $(".expression").addClass("hide-anim-icons");
-    await delay(300);
     $(".expression").addClass("clear-expression-divs");
-    $(".tech-highlight").removeClass("hide");
+    const icon = $(event.target).attr("data-icon");
+    $(`#${icon}0`).removeClass("hide");
+    $(`#${icon}1`).removeClass("hide");
+    $(`#${icon}2`).removeClass("hide");
+    $(`#${icon}3`).removeClass("hide");
   });
 
   $("#techIconCloseBtn").on("click", () => {
@@ -52,4 +59,20 @@ $(function (){
     $(".tech-highlight").addClass("hide");
     $(".expression").removeClass("clear-expression-divs");
   });
+
+  $(".multiplication-wrap").on("mouseover", ()=> {
+    $(".multiplication-cross").addClass("multiplication-large");
+  });
+  $(".equals-wrap").on("mouseover", ()=> {
+    $(".equals-bar").addClass("equals-large");
+  });
+  $(".multiplication-wrap").on("mouseout", ()=> {
+    $(".multiplication-cross").removeClass("multiplication-large");
+  });
+  $(".equals-wrap").on("mouseout", ()=> {
+    $(".equals-bar").removeClass("equals-large");
+  });
+  $(".multiplication-wrap").on("click", matrixAnimation);
+  $(".equals-wrap").on("click", matrixAnimation);
+
 });

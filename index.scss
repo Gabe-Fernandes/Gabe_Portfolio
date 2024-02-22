@@ -22,10 +22,15 @@
     .multiplication-wrap {
       @include Flex-Row(center, center, 10vw, 10vw);
       position: relative;
+      cursor: pointer;
       .multiplication-cross {
         @include WidthHeight(0.8vw, 6vw);
         background-color: $cBlue;
         position: absolute;
+        transition: width 0.4s, height 0.4s;
+      }
+      .multiplication-large {
+        @include WidthHeight(1vw, 7.5vw);
       }
       .cross1 {
         transform: rotate(45deg);
@@ -42,10 +47,15 @@
     .equals-wrap {
       @include Flex-Row(center, center, 10vw, 10vw);
       position: relative;
+      cursor: pointer;
       .equals-bar {
         @include WidthHeight(6vw, 0.8vw);
         background-color: $cBlue;
         position: absolute;
+        transition: width 0.4s, height 0.4s;
+      }
+      .equals-large {
+        @include WidthHeight(7.5vw, 1vw);
       }
       .bar1 {
         top: 35%;
@@ -122,6 +132,17 @@
   position: relative;
   #squareMatrix {
     @include Matrix(85vw, 28vw);
+    .side-bar {
+      @include WidthHeight(0.01 * 85vw, 28vw);
+    }
+    .middle-of-matrix {
+      .horizontal-wrap {
+        @include Flex-Row(center, center, 85vw - 0.04 * 85vw, 0.01 * 85vw);
+      }
+      .horizontal-bar {
+        @include WidthHeight(0.12 * 85vw, 0.01 * 85vw);
+      }
+    }
     .expression {
       @include Flex-Row(center, center, 40vw, 12vw);
       position: relative;
@@ -165,9 +186,13 @@
   @include Flex-Row(center, center, 100%, 100%);
   transition: opacity 0.3s;
   img {
-    @include WidthHeight(100%, 100%);
+    @include WidthHeight(80%, 90%);
   }
   .highlight-icon {
     @include WidthHeight(10rem, 10rem);
+  }
+  p {
+    width: 80%;
+    font-size: 1.5rem;
   }
 }
