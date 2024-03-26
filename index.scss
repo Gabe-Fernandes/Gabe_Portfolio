@@ -6,8 +6,46 @@
   border: 1px black solid;
 }
 
-#projectsSection {
-  @include Flex-Row(center, center, initial, 90vh);
+#aboutMeSection {
+  h1 {
+    font-size: 3.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .social-wrap {
+    @include Flex-Row(center, center, initial, initial);
+    margin: 0% auto;
+    .social-icon-border {
+      @include WidthHeight(3rem, 3rem);
+      cursor: pointer;
+      margin: 0vh 1vw;
+      .social-tech-icon {
+        @include Img-Round(3rem);
+        border-radius: 0%;
+        cursor: pointer;
+        transition: width 0.3s, height 0.3s;
+      }
+      .tech-icon-pop {
+        @include WidthHeight(3.6rem, 3.6rem);
+      }
+    }
+    .linked-in {
+      @include WidthHeight(8rem, 8rem);
+      .social-tech-icon {
+        @include WidthHeight(8rem, 8rem);
+      }
+      .tech-icon-pop {
+        @include WidthHeight(9rem, 9rem);
+      }
+    }
+  }
+  .about-me-div {
+    @include Flex-Row(center, center, initial, initial);
+    iframe {
+      @include WidthHeight(50vw, 50vh);
+    }
+  }
 }
 
 #techStackSection {
@@ -67,14 +105,114 @@
   }
 }
 
-#contactForm {
-  @include Flex-Col(center, center, initial, initial);
-  input, textarea {
-    color: $cBlack;
+#projectsSection {
+  @include Flex-Col(center, center, initial, 90vh);
+  .slideshow-wrap {
+    @include Flex-Row(center, center, 100%, 90%);
+    position: relative;
+    .proj-wrap {
+      @include Flex-Col(center, center, 100%, 100%);
+      transition: width 0.5s, opacity 0.5s;
+      .proj-description {
+        @include WidthHeight(60vw, 5vh);
+      }
+      .proj-gif {
+        @include WidthHeight(30%, 50%);
+      }
+      .proj-link-wrap {
+        @include Flex-Row(center, center, 30vw, 10vh);
+        img {
+          @include Img-Round(4rem);
+          transition: width 0.3s, height 0.3s;
+          border-radius: 0%;
+          margin-right: 2vw;
+        }
+        .tech-icon-pop {
+          @include WidthHeight(4.6rem, 4.6rem);
+          font-size: 1.3rem;
+        }
+        .btn {
+          // counteract the width height increase of .tech-icon-pop on btn hover
+          @include WidthHeight(initial, initial);
+          transition: font-size 0.3s;
+        }
+      }
+    }
+    .slideshow-btn {
+      @include Img-Round(4rem);
+      cursor: pointer;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+    }
+    #slideshowLeftBtn {
+      transform: rotate(90deg);
+      left: 3%;
+    }
+    #slideshowRightBtn {
+      transform: rotate(-90deg);
+      right: 3%;
+    }
+  }
+}
+
+#contactFormSection {
+  @include Flex-Col(center, center, initial, 90vh);
+  margin-bottom: 10vh;
+  form {
+    @include Flex-Col(center, center, 50vw, 50vh);
+    margin: 0% auto;
+
+    .contact-input-wrap {
+      @include Flex-Row(center, center, 35vw, initial);
+      margin: 1vh 0vw;
+      div {
+        @include Flex-Row(flex-start, center, 50%, initial);
+      }
+      label {
+        margin-left: 40%;
+      }
+      input, textarea {
+        width: 15vw;
+        transition: width 0.3s;
+      }
+      textarea {
+        height: 15vh;
+      }
+    }
+    button {
+      margin-top: 2vh;
+    }
   }
   #scrollTest {
-    @include Flex-Row(center, center, initial, initial);
-    color: $cWhite;
+    @include Flex-Row(flex-start, center, initial, initial);
+    margin-top: 4vh;
+    margin-left: 10vw;
+  }
+
+  // mobile styles
+  @media (max-width: $bmaxTablet) {
+    h1 {
+      margin: 2vh auto;
+    }
+    form {
+      height: 85vh;
+      justify-content: flex-start;
+      .contact-input-wrap {
+        flex-direction: column;
+        label {
+          margin: 0%;
+        }
+      }
+      .contact-input-wrap {
+        div {
+          width: 80vw;
+          input, textarea {
+            width: 80vw;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -196,4 +334,21 @@
     width: 80%;
     font-size: 1.5rem;
   }
+}
+
+#calcNav {
+  @include Flex-Col(center, flex-start, 10vw, 10vh);
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  background-color: $cBlue;
+  a {
+    color: $cWhite;
+  }
+}
+
+// slideshow
+.slideshow-shrink {
+  width: 0% !important;
+  opacity: 0%;
 }

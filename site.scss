@@ -13,14 +13,14 @@ $cBlack: #1B1212;
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background-color: $cWhite;
 }
 
-h1 {
-  margin: 20vh auto 0vh auto;
+h1, h2 {
   text-align: center;
 }
 
@@ -98,6 +98,22 @@ h1 {
       transform: rotate(-45deg);
     }
   }
+}
+
+input, h1, select, option, textarea {
+  color: black;
+}
+
+input {
+  text-indent: 10%;
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+}
+
+textarea {
+  border-radius: 0.4rem;
+  resize: none;
+  padding: 0.3rem;
 }
 
 ::-webkit-scrollbar {

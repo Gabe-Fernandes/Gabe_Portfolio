@@ -14,19 +14,27 @@
 </head>
 <body>
 <main id="portfolioContent">
-<section id="landingPageSection" class="portfolio-section">
-  <h1>This site is under construction...</h1>
-  <a href="#scrollTest" class="btn">Hire Me</a>
-  <!--
-  <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original-wordmark.svg" class="tech-icon"/></div>
-  <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" class="tech-icon"/></div>
-  <div class="icon-border"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original-wordmark.svg" class="tech-icon"/></div>
-  -->
+<section id="aboutMeSection" class="portfolio-section">
+  <h1>Gabriel Fernandes</h1>
+  <h2>Asp.Net Developer</h2>
+
+  <div class="social-wrap">
+    <div class="social-icon-border"><a target="_blank" href="https://github.com/Gabe-Fernandes"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" class="social-tech-icon"/></a></div>
+    <div class="social-icon-border linked-in"><a target="_blank" href="https://www.linkedin.com/in/gabriel-fernandes-724481300/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original-wordmark.svg" class="social-tech-icon" /></a></div>
+    <div class="social-icon-border"><a target="_blank" href="https://www.youtube.com/"><img src="/icons/youtubeIcon.png" class="social-tech-icon" /></a></div>
+  </div>
+
+  <div class="about-me-div">
+    <iframe src="https://www.youtube.com/embed/M_XwzBMTJaM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <a href="#contactFormSection" class="btn">Hire Me</a>
 </section>
 
 
 
 <section id="techStackSection" class="portfolio-section">
+  <h2>Tech Stack</h2>
   <div class="matrix-container">
     <div id="horizontalMatrix">
       <div class="side-bar matrix-bar"></div>
@@ -101,41 +109,84 @@
 
 
 <section id="projectsSection" class="portfolio-section">
+  <h2 id="projTitle">Projects (1 of 3)</h2>
+  <div class="slideshow-wrap">
 
+    <div id="slideShow1" class="proj-wrap">
+      <h3>Project Management Tool (PMT)</h3>
+      <p class="proj-description">A ticketing system that organizes and tracks a project's team, the tasks they complete, the time spent completing them, and compiles metrics into a clear-cut dashboard format.</p>
+      <img class="proj-gif" src="/Gifs/ProjDashGif.gif" />
+      <div class="proj-link-wrap">
+        <div class="social-icon-border"><a target="_blank" href="https://github.com/Gabe-Fernandes/ProjectManagementTool"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" class="social-tech-icon"/></a></div>
+        <a class="btn social-tech-icon" target="_blank" href="https://gabe-pmt.com/Account/Login">Live Site</a>
+      </div>
+    </div>
+
+    <div id="slideShow2" class="proj-wrap slideshow-shrink">
+      <h3>PMT Scaffolder</h3>
+      <p class="proj-description">A command line tool that takes a few arguments and inserts programmatically written code files right into your project. Given model data imported from project planning in PMT, this tool writes repositories, their interfaces, their unit tests, and hooks everything up with dipendency injection.</p>
+      <img class="proj-gif" src="/Gifs/PowerShellGif.gif" />
+      <div class="proj-link-wrap">
+        <div class="social-icon-border"><a target="_blank" href="https://github.com/Gabe-Fernandes/PmtScaffolderRepo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" class="social-tech-icon"/></a></div>
+        <a class="btn social-tech-icon" target="_blank" href="https://gabe-pmt.com/Account/Login">Live Site</a>
+      </div>
+  </div>
+
+    <div id="slideShow3" class="proj-wrap slideshow-shrink">
+      <h3>Style Dash</h3>
+      <p class="proj-description">StyleDash is a JQuery/Scss library used to quickly style/validate your frontend with features that streamline accessibility, dynamic tables, and more!</p>
+      <img class="proj-gif" src="/Gifs/FileStructGif.gif" />
+      <div class="proj-link-wrap">
+        <div class="social-icon-border"><a target="_blank" href="https://github.com/Gabe-Fernandes/StyleDashRepo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" class="social-tech-icon"/></a></div>
+        <a class="btn social-tech-icon" target="_blank" href="https://gabe-pmt.com/Account/Login">Live Site</a>
+      </div>
+  </div>
+
+    <img id="slideshowLeftBtn" class="slideshow-btn" src="/icons/FileDirectoryArrow.png" />
+    <img id="slideshowRightBtn" class="slideshow-btn" src="/icons/FileDirectoryArrow.png" />
+  </div>
 </section>
 
 
 
 <section id="contactFormSection" class="portfolio-section">
-  <h1 class="text-center mb-3">Test Form</h1>
+  <h1 class="text-center mb-3">Contact Form</h1>
   <form action="POST" id="contactForm" data-netlify="true" name="PortfolioContact" netlify>
-    <div>
-      <label>First Name</label>
-      <input type="text" name="firstName" placeholder="First name" aria-label="First name" required>
+
+    <div class="contact-input-wrap">
+      <div><label>First Name</label></div>
+      <div><input type="text" name="firstName" placeholder="First name" aria-label="First name" required></div>
     </div>
-    <div>
-      <label>Last Name</label>
-      <input type="text" name="lastName" placeholder="Last name" aria-label="Last name" required>
+    <div class="contact-input-wrap">
+      <div><label>Last Name</label></div>
+      <div><input type="text" name="lastName" placeholder="Last name" aria-label="Last name" required></div>
     </div>
-    <div>
-      <label>Email</label>
-      <input type="email" name="email" placeholder="Email" aria-label="Email" required>
+    <div class="contact-input-wrap">
+      <div><label>Email</label></div>
+      <div><input type="email" name="email" placeholder="Email" aria-label="Email" required></div>
     </div>
-    <div>
-      <label>Subject</label>
-      <input type="text" name="subject" placeholder="Subject" aria-label="Subject" required>
+    <div class="contact-input-wrap">
+      <div><label>Subject</label></div>
+      <div><input type="text" name="subject" placeholder="Subject" aria-label="Subject" required></div>
     </div>
-    <div>
-      <label>Message</label>
-      <textarea type="text" name="message" placeholder="Message" aria-label="Message" required></textarea>
+    <div class="contact-input-wrap">
+      <div><label>Message</label></div>
+      <div><textarea type="text" name="message" placeholder="Message" aria-label="Message" required></textarea></div>
     </div>
+    
     <button type="submit" class="btn">Submit</button>
   </form>
-  <a id="scrollTest" href="#">Back to top</a>
 </section>
 </main>
 
 <!--Modals-->
+<section id="calcNav">
+  <a href="#aboutMeSection">About Me</a>
+  <a href="#techStackSection">Tech Stack</a>
+  <a href="#projectsSection">Projects</a>
+  <a href="#contactFormSection">Contact</a>
+</section>
+
 <section id="techIconModal" class="screen-tint modal-hide">
   <div id="squareMatrix" class="tech-icon-modal">
     <div id="squareMatrix">
@@ -228,22 +279,22 @@
                 <p>Vanilla js is used here for client-side email validation in English. While this lighten's the server's work, server-side validation is still needed behind this for security.</p>
               </div>
               <div id="sass1" class="tech-highlight hide">
-                <p></p>
+                <p>StyleDash is a front end library I wrote to quickly meet UI requirements like a dropdown menu with a custom response option.</p>
               </div>
               <div id="jquery1" class="tech-highlight hide">
-                <p>Jquery's easy DOM tree traversal made it a great choice for building this custom file structure menu.</p>
+                <p>jQuery's easy DOM tree traversal made it a great choice for building this custom file structure menu.</p>
               </div>
               <div id="powershell1" class="tech-highlight hide">
-                <p></p>
+                <p>Using Powershell and CLI wrap, I made a tool that creates code files and automatically writes boilerplate code to speed up development.</p>
               </div>
               <div id="entity1" class="tech-highlight hide">
                 <p>With the help of the ORM, Entity framework, the repository design pattern is used to separate the data access layer and handle communication with the db context.</p>
               </div>
               <div id="signalr1" class="tech-highlight hide">
-                <p></p>
+                <p>This library's use of websockets connects the server/client sides so users can see real time updates without a new http request.</p>
               </div>
               <div id="identity1" class="tech-highlight hide">
-                <p></p>
+                <p>Cookie authentication stores the security context for registered users. Templated emails confirm and recover accounts.</p>
               </div>
             </div>
           </div>
@@ -279,22 +330,22 @@
                 <img src="/CodeSnips/JsCode1.PNG" style="height: 100%;">
               </div>
               <div id="sass2" class="tech-highlight hide">
-                <img src="/Gifs/ProjDashGif.gif">
+                <img src="/CodeSnips/SassCode.PNG">
               </div>
               <div id="jquery2" class="tech-highlight hide">
                 <img src="/CodeSnips/JqueryCode.PNG">
               </div>
               <div id="powershell2" class="tech-highlight hide">
-                <img src="/Gifs/ProjDashGif.gif">
+                <img src="/CodeSnips/PowerShellCode.PNG">
               </div>
               <div id="entity2" class="tech-highlight hide">
                 <img src="/CodeSnips/RepositoryCode1.PNG">
               </div>
               <div id="signalr2" class="tech-highlight hide">
-                <img src="/Gifs/ProjDashGif.gif">
+                <img src="/CodeSnips/SignalRCode.PNG">
               </div>
               <div id="identity2" class="tech-highlight hide">
-                <img src="/Gifs/ProjDashGif.gif">
+                <img src="/CodeSnips/IdentityCode.PNG">
               </div>
             </div>
             <div id="exp11" class="expression">
@@ -328,22 +379,22 @@
                 <img src="/CodeSnips/JsCode2.PNG" style="height: 70%">
               </div>
               <div id="sass3" class="tech-highlight hide">
-                <img src="/Gifs/ProjDashGif.gif">
+                <img src="/Gifs/SassGif.gif">
               </div>
               <div id="jquery3" class="tech-highlight hide" style="width: 50%;">
                 <img src="/Gifs/FileStructGif.gif">
               </div>
               <div id="powershell3" class="tech-highlight hide">
-                <img src="/Gifs/ProjDashGif.gif">
+                <img src="/Gifs/PowerShellGif.gif">
               </div>
               <div id="entity3" class="tech-highlight hide">
                 <img src="/CodeSnips/RepositoryCode.PNG">
               </div>
               <div id="signalr3" class="tech-highlight hide">
-                <img src="/Gifs/ProjDashGif.gif">
+                <img src="/Gifs/SignalRGif.gif">
               </div>
               <div id="identity3" class="tech-highlight hide">
-                <img src="/Gifs/ProjDashGif.gif">
+                <img src="/Gifs/EmailTemplateImg.PNG">
               </div>
             </div>
           </div>
