@@ -106,6 +106,6 @@ $(function (){
 
   createSlideShow("proj-wrap");
   $(".slideshow-btn").on("click", ()=> {
-    $("#projTitle").html(`Projects (${currentPage} of 3)`);
+    $("#projTitle").html(`Project (${currentPage} of 3)`);
   });
 });
